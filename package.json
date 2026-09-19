@@ -1,0 +1,19 @@
+{
+  "name": "xrplme-example",
+  "version": "1.0.0",
+  "description": "Example code for querying xrplme.online country agents via x402 payment over the XRP Ledger",
+  "keywords": ["x402", "xrp", "xrpl", "payment", "api", "llm-agents"],
+  "scripts": {
+    "start": "python python_example.py",
+    "countries": "python python_example.py list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrplme/xrplme-example"
+  },
+  "dependencies": {
+    "requests": "^2.31.0"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
