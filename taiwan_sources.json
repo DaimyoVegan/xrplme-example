@@ -1,0 +1,98 @@
+[
+  {
+    "name": "National Statistics Republic of China (Taiwan)",
+    "url": "https://www.stat.gov.tw/",
+    "category": "statistics",
+    "title": "NSC Taiwan",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.stat.gov.tw"
+  },
+  {
+    "name": "Central Bank of the Republic of China (Taiwan)",
+    "url": "https://www.cbc.gov.tw/",
+    "category": "finance",
+    "title": "CBC Taiwan",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.cbc.gov.tw"
+  },
+  {
+    "name": "Ministry of Economic Affairs Taiwan",
+    "url": "https://www.moea.gov.tw/",
+    "category": "commerce",
+    "title": "MOEA Taiwan",
+    "keywords": [
+      "trade",
+      "industry",
+      "export",
+      "import",
+      "investment"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.moea.gov.tw"
+  },
+  {
+    "name": "Trading Economics Taiwan",
+    "url": "https://tradingeconomics.com/taiwan",
+    "category": "statistics",
+    "title": "TE Taiwan",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/taiwan"
+  },
+  {
+    "name": "IMF Taiwan",
+    "url": "https://www.imf.org/en/Countries/TWN",
+    "category": "statistics",
+    "title": "IMF Taiwan",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Banking Bureau Taiwan",
+    "url": "https://www.fsc.gov.tw/",
+    "category": "finance",
+    "title": "FSC Taiwan",
+    "keywords": [
+      "financial",
+      "regulatory",
+      "banking"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.fsc.gov.tw"
+  },
+  {
+    "name": "Council of Agriculture Taiwan",
+    "url": "https://www.coa.gov.tw/",
+    "category": "commerce",
+    "title": "COA Taiwan",
+    "keywords": [
+      "agriculture",
+      "trade",
+      "commodities"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.coa.gov.tw"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Statistics and Census Service Macau",
+    "url": "https://www.dsej.gov.mo/",
+    "category": "statistics",
+    "title": "DSEC Macau",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.dsej.gov.mo"
+  },
+  {
+    "name": "Monetary Authority of Macau",
+    "url": "https://www.amcm.gov.mo/",
+    "category": "finance",
+    "title": "AMCM Macau",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.amcm.gov.mo"
+  },
+  {
+    "name": "Macau Trade and Investment Exchange",
+    "url": "https://www.mtdc.gov.mo/",
+    "category": "commerce",
+    "title": "MTIE Macau",
+    "keywords": [
+      "trade",
+      "export",
+      "import",
+      "investment",
+      "gaming",
+      "tourism"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mtdc.gov.mo"
+  },
+  {
+    "name": "Trading Economics Macau",
+    "url": "https://tradingeconomics.com/macao",
+    "category": "statistics",
+    "title": "TE Macau",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/macao"
+  },
+  {
+    "name": "IMF Macau",
+    "url": "https://www.imf.org/en/Countries/MAC",
+    "category": "statistics",
+    "title": "IMF Macau",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "World Bank Macau",
+    "url": "https://data.worldbank.org/country/macau",
+    "category": "statistics",
+    "title": "World Bank Macau Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/macau"
+  },
+  {
+    "name": "Macau Government Tourism Bureau",
+    "url": "https://www.tourism.gov.mo/",
+    "category": "commerce",
+    "title": "MGTO Macau",
+    "keywords": [
+      "tourism",
+      "gaming",
+      "visitors",
+      "revenue"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.tourism.gov.mo"
+  }
+]

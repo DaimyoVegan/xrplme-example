@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="xrplme.online — Real-time status of 24 country AI agents. Check health, response times, and data availability.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>xrplme.online — Status Dashboard</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    background: radial-gradient(1200px 800px at 20% -10%, #0c1116 0%, rgba(12,17,22,0) 60%),
+                radial-gradient(900px 700px at 100% 0%, #0b0e12 0%, rgba(11,14,18,0) 55%),
+                #07090b;
+    color: #e6e3dc;
+    min-height: 100vh;
+    padding: 0 30px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 40px 0; }
+  .banner {
+    font-size: 0.68rem;
+    color: #5a5852;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #16181c;
+    margin-bottom: 36px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #e6e3dc;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    color: #8a877d;
+    margin-bottom: 24px;
+  }
+  .summary {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .summary-card {
+    background: #05070a;
+    border: 1px solid #1a1f26;
+    border-radius: 6px;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  .summary-card .num { font-size: 1.6rem; font-weight: 700; }
+  .summary-card .num.green { color: #10b981; }
+  .summary-card .num.red { color: #ef4444; }
+  .summary-card .num.yellow { color: #f59e0b; }
+  .summary-card .label { font-size: 0.72rem; color: #5a5852; margin-top: 4px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #1a1f26;
+    font-size: 0.82rem;
+  }
+  th {
+    color: #5a5852;
+    font-weight: 500;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .status-dot.green { background: #10b981; box-shadow: 0 0 8px #10b981; }
+  .status-dot.red { background: #ef4444; box-shadow: 0 0 8px #ef4444; }
+  .status-dot.yellow { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+  .status-dot.gray { background: #3a3a4a; }
+  .row-online { color: #10b981; }
+  .row-offline { color: #ef4444; }
+  .row-loading { color: #f59e0b; }
+  .latency { font-variant-numeric: tabular-nums; }
+  .refresh-info {
+    font-size: 0.72rem;
+    color: #5a5852;
+    margin-top: 12px;
+  }
+  .btn {
+    background: #3a96e6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+  .btn:hover { background: #4a9ef7; }
+  .x402-badge {
+    display: inline-block;
+    background: #0a0f15;
+    border: 1px solid #3a96e6;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.65rem;
+    color: #3a96e6;
+    font-weight: 600;
+  }
+  .footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #16181c;
+    font-size: 0.72rem;
+    color: #5a5852;
+    text-align: center;
+  }
+  .note {
+    font-size: 0.72rem;
+    color: #5a5852;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="banner">
+    24 countries • x402 payment on XRP Ledger • Auto-refreshes every 30s
+  </div>
+
+  <h1>Status Dashboard</h1>
+  <p class="subtitle">
+    Real-time health of all <span class="x402-badge">x402</span> country AI agents on xrplme.online.
+    Green = online (bot responds), Red = offline. All bot endpoints return 402
+    Payment Required as the correct response for x402 payment gating.
+  </p>
+
+  <div class="summary" id="summary">
+    <div class="summary-card">
+      <div class="num green" id="count-online">0</div>
+      <div class="label">Online</div>
+    </div>
+    <div class="summary-card">
+      <div class="num red" id="count-offline">0</div>
+      <div class="label">Offline</div>
+    </div>
+    <div class="summary-card">
+      <div class="num yellow" id="count-checking">24</div>
+      <div class="label">Checking...</div>
+    </div>
+  </div>
+
+  <button class="btn" onclick="refreshAll()" style="margin-bottom: 12px;">Refresh Now</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Status</th>
+        <th>Response</th>
+        <th>Latency</th>
+        <th>Last Check</th>
+        <th>Endpoint</th>
+      </tr>
+    </thead>
+    <tbody id="country-table">
+      <!-- Filled by JavaScript -->
+    </tbody>
+  </table>
+
+  <div class="note">
+    <span class="x402-badge">402</span> = Bot is online and requesting x402 payment (0.1 XRP for /bot, 0.5 XRP for /bot/ai).<br>
+    <span class="x402-badge">200</span> = Health check passed (no payment needed).<br>
+    Bot endpoints are payment-gated — a 402 response means the endpoint is healthy and ready to process x402 payments.
+  </div>
+
+  <div class="refresh-info">
+    Last updated: <span id="last-updated">Never</span>
+  </div>
+
+  <div class="footer">
+    xrplme.online — Status Dashboard &middot; Uses <span class="x402-badge">x402</span> protocol on XRP Ledger
+  </div>
+
+</div>
+
+<script>
+const COUNTRIES = [
+  "thailand", "vietnam", "japan", "korea", "india", "usa", "canada", "uae",
+  "uk", "philippines", "singapore", "australia", "germany", "france", "brazil",
+  "mexico", "switzerland", "netherlands", "hong_kong", "malaysia", "indonesia",
+  "taiwan", "macau", "newzealand"
+];
+
+const COUNTRY_LABELS = {
+  "thailand": "Thailand", "vietnam": "Vietnam", "japan": "Japan",
+  "korea": "Korea", "india": "India", "usa": "USA", "canada": "Canada",
+  "uae": "UAE", "uk": "United Kingdom", "philippines": "Philippines",
+  "singapore": "Singapore", "australia": "Australia", "germany": "Germany",
+  "france": "France", "brazil": "Brazil", "mexico": "Mexico",
+  "switzerland": "Switzerland", "netherlands": "Netherlands",
+  "hong_kong": "Hong Kong", "malaysia": "Malaysia", "indonesia": "Indonesia",
+  "taiwan": "Taiwan", "macau": "Macau", "newzealand": "New Zealand"
+};
+
+async function checkCountry(country) {
+  const start = performance.now();
+  try {
+    // Try /health endpoint first (free)
+    const healthResp = await fetch(`https://xrplme.online/wc/v1/${country}/health`, {
+      method: "GET"
+    });
+    const elapsed = Math.round(performance.now() - start);
+
+    // If health returns JSON (proper routing), use it
+    const contentType = healthResp.headers.get("content-type") || "";
+    if (healthResp.ok && contentType.includes("application/json")) {
+      const data = await healthResp.json();
+      return {
+        status: "online",
+        detail: "HEALTHY",
+        latency: elapsed,
+        endpoint: "/health (200)"
+      };
+    }
+
+    // If health returns HTML (SPA fallback), try the bot endpoint
+    // A 402 response means the bot is online and x402-gated
+    if (healthResp.ok || healthResp.status === 200) {
+      // HTML fallback means nginx caught it as SPA — try /bot
+      const botStart = performance.now();
+      const botResp = await fetch(`https://xrplme.online/wc/v1/${country}/bot`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: "health", session_id: "status-check" })
+      });
+      const botElapsed = Math.round(performance.now() - botStart);
+
+      if (botResp.status === 402) {
+        return {
+          status: "online",
+          detail: "402 Payment Required",
+          latency: botElapsed,
+          endpoint: "/bot (x402)"
+        };
+      }
+      if (botResp.status === 200) {
+        return {
+          status: "online",
+          detail: "200 OK",
+          latency: botElapsed,
+          endpoint: "/bot (200)"
+        };
+      }
+      return {
+        status: "offline",
+        detail: `Bot HTTP ${botResp.status}`,
+        latency: botElapsed,
+        endpoint: "/bot"
+      };
+    }
+
+    // Non-200 health — try bot endpoint as fallback
+    const botResp = await fetch(`https://xrplme.online/wc/v1/${country}/bot`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: "health", session_id: "status-check" })
+    });
+    const botElapsed = Math.round(performance.now() - start);
+
+    if (botResp.status === 402) {
+      return {
+        status: "online",
+        detail: "402 Payment Required",
+        latency: botElapsed,
+        endpoint: "/bot (x402)"
+      };
+    }
+    if (botResp.status === 200) {
+      return {
+        status: "online",
+        detail: "200 OK",
+        latency: botElapsed,
+        endpoint: "/bot (200)"
+      };
+    }
+    return {
+      status: "offline",
+      detail: `HTTP ${botResp.status}`,
+      latency: botElapsed,
+      endpoint: "/bot"
+    };
+
+  } catch (err) {
+    return {
+      status: "offline",
+      detail: err.message.split(":")[0] || err.message,
+      latency: 0,
+      endpoint: "unreachable"
+    };
+  }
+}
+
+async function refreshAll() {
+  const onlineEl = document.getElementById("count-online");
+  const offlineEl = document.getElementById("count-offline");
+  const checkingEl = document.getElementById("count-checking");
+
+  onlineEl.textContent = 0;
+  offlineEl.textContent = 0;
+  checkingEl.textContent = COUNTRIES.length;
+
+  let html = "";
+  for (const country of COUNTRIES) {
+    html += `<tr id="row-${country}">
+      <td>${COUNTRY_LABELS[country] || country}</td>
+      <td><span class="status-dot gray"></span><span class="row-loading">Checking...</span></td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>`;
+  }
+  document.getElementById("country-table").innerHTML = html;
+
+  let online = 0;
+  let offline = 0;
+
+  const results = await Promise.all(
+    COUNTRIES.map(async (country) => {
+      const data = await checkCountry(country);
+      return { country, data };
+    })
+  );
+
+  for (const { country, data } of results) {
+    if (data.status === "online") online++;
+    else offline++;
+
+    const row = document.getElementById(`row-${country}`);
+    if (!row) continue;
+
+    const dotClass = data.status === "online" ? "green" : "red";
+    const rowClass = data.status === "online" ? "row-online" : "row-offline";
+    const now = new Date().toLocaleTimeString();
+
+    row.innerHTML = `
+      <td>${COUNTRY_LABELS[country] || country}</td>
+      <td><span class="status-dot ${dotClass}"></span><span class="${rowClass}">${data.status.toUpperCase()}</span></td>
+      <td>${data.detail}</td>
+      <td class="latency">${data.latency} ms</td>
+      <td>${now}</td>
+      <td style="font-size:0.72rem;color:#5a5852;">${data.endpoint}</td>
+    `;
+  }
+
+  onlineEl.textContent = online;
+  offlineEl.textContent = offline;
+  checkingEl.textContent = 0;
+  document.getElementById("last-updated").textContent = new Date().toLocaleString();
+}
+
+// Initial load
+refreshAll();
+
+// Auto-refresh every 30 seconds
+setInterval(refreshAll, 30000);
+</script>
+</body>
+</html>

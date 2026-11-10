@@ -3,19 +3,18 @@
 ## Overview
 
 **xrplme.online** is a source-backed platform providing real-time economic and
-policy data for **30 countries** via x402 payment over the XRP Ledger. Each country
+policy data for **90 countries** via x402 payment over the XRP Ledger. Each country
 exposes two endpoints — a Standard API and an AI-Enhanced API — that return
 structured data sourced from government APIs and official publications.
 
 AI agents query the platform by submitting an x402 payment (HTTP 402 → pay in
 XRP → retry for data). No API keys, no KYC, no subscriptions.
 
-### Countries (30)
+### Countries (90)
 
-Thailand, Vietnam, Japan, Korea, India, USA, Canada, UAE, UK, Philippines,
-Singapore, Australia, Germany, France, Brazil, Mexico, Switzerland,
-Netherlands, Hong Kong, Malaysia, Indonesia, Taiwan, Macau, New Zealand,
-Brunei, Laos, Myanmar, Cambodia, Italy, Timor-Leste, Papua New Guinea
+All 90 countries are live on every rail. The current list is at
+**https://xrplme.online/countries.html**, and the slugs are enumerated at the
+bottom of this file.
 
 ### Endpoints
 
@@ -41,7 +40,7 @@ import requests
 import json
 
 BASE = "https://xrplme.online/wc/v1"
-COUNTRY = "thailand"   # any of the 30 countries — see slug list below
+COUNTRY = "thailand"   # any of the 90 countries — see slug list below
 ENDPOINT = "bot"       # or "bot/ai" for AI-enhanced (5 XRP)
 QUERY = "What are Thailand's business registration requirements?"
 
@@ -139,6 +138,21 @@ curl https://xrplme.online/wc/v1/thailand/health
 | `/bot/ai` | 5.0 XRP | AI-enhanced — analysis, comparison, recommendations |
 | `/health` | FREE | Service status check |
 
+## Investigate — screening and company look-up
+
+Two more datasets on the same rails and the same payment flow.
+
+| Endpoint | Price (XRPL / USDC) | What you get |
+|---|---|---|
+| `/wc/screen/bot` · `-solana` · `-evm` | 2 XRP / $2.00 | Screening: matches, programme, designation date, citation |
+| `/wc/entity/lookup/bot` · `-solana` · `-evm` | 1 XRP / $1.00 | Company record: legal name, status, jurisdiction, entity ID |
+| `/wc/entity/ownership/bot` · `-solana` · `-evm` | 5 XRP / $5.00 | Ownership chain to the ultimate parent, plus direct subsidiaries |
+
+Screening takes `{"name": "..."}`. Look-up takes `{"query": "company name or entity ID"}`.
+Ownership takes `{"query": "<entity ID>"}`.
+
+Machine-readable pricing for agents: **https://xrplme.online/llms.txt**
+
 ## API Documentation
 
 Full interactive API documentation is available at:
@@ -146,11 +160,18 @@ Full interactive API documentation is available at:
 
 ## Supported Country Slugs
 
-thailand, vietnam, japan, korea, india, usa, canada, uae, uk,
-philippines, singapore, australia, germany, france, brazil, mexico,
-switzerland, netherlands, hong_kong, malaysia, indonesia, taiwan,
-macau, newzealand, brunei, laos, myanmar, cambodia, italy, timor-leste,
-papua-new-guinea
+albania, algeria, argentina, australia, austria, bangladesh, bhutan,
+brazil, brunei, bulgaria, cambodia, canada, chile, colombia, croatia,
+cyprus, czechia, denmark, egypt, estonia, finland, france, germany,
+ghana, greece, guatemala, hong_kong, hungary, iceland, india, indonesia,
+iran, iraq, ireland, italy, japan, kazakhstan, kenya, korea, laos,
+latvia, libya, lithuania, luxembourg, macau, macedonia, malaysia,
+maldives, malta, mexico, moldova, morocco, myanmar, nepal, netherlands,
+newzealand, nigeria, norway, papua-new-guinea, paraguay, philippines,
+poland, portugal, romania, rwanda, saudi_arabia, senegal, serbia,
+singapore, slovakia, slovenia, south_africa, spain, sri_lanka, sweden,
+switzerland, syria, taiwan, thailand, timor-leste, tunisia, turkey, uae,
+uk, ukraine, uruguay, usa, venezuela, vietnam, yemen
 
 ## License
 

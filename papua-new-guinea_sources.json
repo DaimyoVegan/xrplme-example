@@ -1,0 +1,99 @@
+[
+  {
+    "name": "National Statistical Office Papua New Guinea",
+    "url": "https://www.nso.org.pg/",
+    "category": "statistics",
+    "title": "NSO PNG",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.nso.org.pg"
+  },
+  {
+    "name": "Bank of Papua New Guinea",
+    "url": "https://www.bankofpng.gov.pg/",
+    "category": "finance",
+    "title": "BPNG",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bankofpng.gov.pg"
+  },
+  {
+    "name": "Department of Trade and Commerce PNG",
+    "url": "https://www.doci.gov.pg/",
+    "category": "commerce",
+    "title": "DoTC PNG",
+    "keywords": [
+      "trade",
+      "commerce",
+      "export",
+      "import",
+      "mining"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.doci.gov.pg"
+  },
+  {
+    "name": "World Bank Papua New Guinea",
+    "url": "https://data.worldbank.org/country/papua-new-guinea",
+    "category": "statistics",
+    "title": "World Bank PNG Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/papua-new-guinea"
+  },
+  {
+    "name": "Trading Economics Papua New Guinea",
+    "url": "https://tradingeconomics.com/papua-new-guinea",
+    "category": "statistics",
+    "title": "TE PNG",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/papua-new-guinea"
+  },
+  {
+    "name": "IMF Papua New Guinea",
+    "url": "https://www.imf.org/en/Countries/PNG",
+    "category": "statistics",
+    "title": "IMF PNG",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Ministry of Treasury PNG",
+    "url": "https://www.mot.gov.pg/",
+    "category": "finance",
+    "title": "MoT PNG",
+    "keywords": [
+      "fiscal",
+      "budget",
+      "revenue",
+      "treasury"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mot.gov.pg"
+  }
+]

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="xrplme.online — 30 countries, economic data via x402 payment. AI agents pay 0.1 XRP per query. No API keys, no KYC.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>xrplme.online — AI Agent Data Platform on XRP Ledger</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    background: radial-gradient(1200px 800px at 20% -10%, #0c1116 0%, rgba(12,17,22,0) 60%),
+                radial-gradient(900px 700px at 100% 0%, #0b0e12 0%, rgba(11,14,18,0) 55%),
+                #07090b;
+    color: #e6e3dc;
+    min-height: 100vh;
+    line-height: 1.6;
+    padding: 0 30px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 40px 0; }
+  .banner {
+    font-size: 0.68rem;
+    color: #5a5852;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #16181c;
+    margin-bottom: 36px;
+  }
+  h1 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #e6e3dc;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 1.05rem;
+    color: #8a877d;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+  .highlight { color: #4a9eff; }
+  .highlight-ai { color: #8e6cff; }
+  .btn {
+    display: inline-block;
+    background: #3a96e6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    margin-top: 12px;
+  }
+  .btn:hover { background: #4a9ef7; }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid #3a96e6;
+    color: #3a96e6;
+    margin-left: 12px;
+  }
+  .btn-secondary:hover {
+    background: rgba(58,150,230,0.08);
+  }
+  .section { margin: 42px 0; }
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #e6e3dc;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #1a1f26;
+    padding-bottom: 6px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .country-tag {
+    background: #0c1116;
+    border: 1px solid #1a1f26;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    color: #8a877d;
+  }
+  .country-tag.active {
+    border-color: #3a96e6;
+    color: #3a96e6;
+  }
+  .code-block {
+    background: #05070a;
+    border: 1px solid #1a1f26;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin: 12px 0;
+  }
+  .code-block .c { color: #5a5852; }
+  .code-block .k { color: #4a9eff; }
+  .code-block .s { color: #8e6cff; }
+  .code-block .n { color: #e6e3dc; }
+  .pricing {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+  .price-card {
+    flex: 1;
+    min-width: 180px;
+    background: #05070a;
+    border: 1px solid #1a1f26;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+  .price-card .price { font-size: 1.3rem; font-weight: 700; color: #3a96e6; }
+  .price-card.ai .price { color: #8e6cff; }
+  .price-card .label { font-size: 0.75rem; color: #5a5852; margin-top: 4px; }
+  .price-card .desc { font-size: 0.72rem; color: #8a877d; margin-top: 6px; }
+  .note {
+    font-size: 0.75rem;
+    color: #5a5852;
+    margin-top: 8px;
+  }
+  .flow-steps { display: flex; gap: 24px; flex-wrap: wrap; margin: 16px 0; }
+  .flow-step {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 12px;
+  }
+  .flow-step .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    background: #3a96e6;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .flow-step .txt { font-size: 0.8rem; color: #8a877d; }
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #16181c;
+    font-size: 0.72rem;
+    color: #5a5852;
+    text-align: center;
+  }
+  .x402-badge {
+    display: inline-block;
+    background: #0a0f15;
+    border: 1px solid #3a96e6;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.68rem;
+    color: #3a96e6;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Banner -->
+  <div class="banner">
+    30 countries • x402 payment on XRP Ledger • Pay per query in XRP
+  </div>
+
+  <!-- Hero -->
+  <div class="section">
+    <h1>AI Agent Data Platform<br>
+      on the XRP Ledger</h1>
+    <div class="subtitle">
+      Query economic and regulatory data from <span class="highlight">30 countries</span> via
+      <span class="x402-badge">x402</span>. AI agents pay
+      <span class="highlight">0.1 XRP</span> for factual data or
+      <span class="highlight-ai">0.5 XRP</span> for AI-enhanced analysis.
+      No API keys. No subscriptions. No KYC.
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="/api-docs.html" class="btn">Get Started — API Docs</a>
+      <a href="/agents.html" class="btn btn-secondary">View All Countries</a>
+    </div>
+    <div class="note">
+      Browser-based "Send Query" is disabled. This is a payment endpoint —
+      use curl, Python, or your AI agent to submit x402 payment.
+      See the code examples below.
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <h2>How x402 Payment Works</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="num">1</div>
+        <div class="txt">Send your query to the endpoint. Server returns HTTP 402 with payment details.</div>
+      </div>
+      <div class="flow-step">
+        <div class="num">2</div>
+        <div class="txt">Sign and submit XRP payment (via Xaman/Joey wallet or t54 facilitator).</div>
+      </div>
+      <div class="flow-step">
+        <div class="num">3</div>
+        <div class="txt">Retry the same request with payment header. Server returns your data.</div>
+      </div>
+    </div>
+    <div class="note">
+      The 402 response includes pay_to address, invoice ID, and QR code for Xaman/Joey wallet.
+      All payments go to the platform treasury (verified on XRPL mainnet).
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price">0.1 XRP</div>
+        <div class="label">Standard API</div>
+        <div class="desc">Factual data — scraped government sources, fast response.</div>
+      </div>
+      <div class="price-card ai">
+        <div class="price">0.5 XRP</div>
+        <div class="label">AI Enhanced API</div>
+        <div class="desc">AI analysis — comparison, reasoning, and recommendations.</div>
+      </div>
+      <div class="price-card">
+        <div class="price">FREE</div>
+        <div class="label">Health Check</div>
+        <div class="desc">No payment required. Check country status and data availability.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick start -->
+  <div class="section">
+    <h2>Quick Start</h2>
+    <div class="code-block">
+<span class="c"># Check health (free, no payment)</span>
+curl https://xrplme.online/wc/v1/thailand/health
+
+<span class="c"># Query standard endpoint (0.1 XRP)</span>
+curl -X POST https://xrplme.online/wc/v1/thailand/bot \
+  -H "Content-Type: application/json" \
+  -d <span class="s">'{"message":"What are Thailand business registration requirements?","session_id":"agent-001"}'</span>
+<span class="c"># → HTTP 402 with payment instructions</span>
+<span class="c"># → Pay invoice, then retry the same request</span>
+<span class="c"># → HTTP 200 with country data</span>
+
+<span class="c"># AI-enhanced endpoint (0.5 XRP)</span>
+curl -X POST https://xrplme.online/wc/v1/japan/bot/ai \
+  -H "Content-Type: application/json" \
+  -d <span class="s">'{"message":"Compare Japan crypto regulations with Singapore","session_id":"agent-002"}'</span>
+    </div>
+    <div class="note">
+      Python, JavaScript, LangChain, and LlamaIndex examples:
+      <a href="https://github.com/xrplme/xrplme-example" style="color:#3a96e6;">github.com/xrplme/xrplme-example</a>
+    </div>
+  </div>
+
+  <!-- Countries -->
+  <div class="section">
+    <h2>24 Available Countries</h2>
+    <div class="grid">
+      <div class="country-tag active">Thailand</div>
+      <div class="country-tag">Vietnam</div>
+      <div class="country-tag">Japan</div>
+      <div class="country-tag">Korea</div>
+      <div class="country-tag">India</div>
+      <div class="country-tag">USA</div>
+      <div class="country-tag">Canada</div>
+      <div class="country-tag">UAE</div>
+      <div class="country-tag">UK</div>
+      <div class="country-tag">Philippines</div>
+      <div class="country-tag">Singapore</div>
+      <div class="country-tag">Australia</div>
+      <div class="country-tag">Germany</div>
+      <div class="country-tag">France</div>
+      <div class="country-tag">Brazil</div>
+      <div class="country-tag">Mexico</div>
+      <div class="country-tag">Switzerland</div>
+      <div class="country-tag">Netherlands</div>
+      <div class="country-tag">Hong Kong</div>
+      <div class="country-tag">Malaysia</div>
+      <div class="country-tag">Indonesia</div>
+      <div class="country-tag">Taiwan</div>
+      <div class="country-tag">Macau</div>
+      <div class="country-tag">New Zealand</div>
+    </div>
+  </div>
+
+  <!-- Endpoints -->
+  <div class="section">
+    <h2>API Endpoints</h2>
+    <div class="code-block">
+POST /wc/v1/<span class="n">{country}</span>/bot          <span class="c"># 0.1 XRP - Standard API</span>
+POST /wc/v1/<span class="n">{country}</span>/bot/ai      <span class="c"># 0.5 XRP - AI Enhanced API</span>
+GET  /wc/v1/<span class="n">{country}</span>/health      <span class="c"># Free - Health check</span>
+    </div>
+    <div class="note">
+      Country slug examples: thailand, japan, singapore, hong_kong, uk, usa.
+      Full list: see <a href="/api-docs.html" style="color:#3a96e6;">API docs</a>.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    xrplme.online — AI agent data platform on the XRP Ledger<br>
+    Built with x402 protocol · Powered by XRP Ledger mainnet
+  </div>
+
+</div>
+</body>
+</html>

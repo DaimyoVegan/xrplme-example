@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Statistics Timor-Leste",
+    "url": "https://www.stat.gov.tl/",
+    "category": "statistics",
+    "title": "SBS Timor-Leste",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.stat.gov.tl"
+  },
+  {
+    "name": "Banco Central Timor-Leste",
+    "url": "https://www.bctl.gov.tl/",
+    "category": "finance",
+    "title": "BCTL Timor-Leste",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bctl.gov.tl"
+  },
+  {
+    "name": "Ministry of Commerce Timor-Leste",
+    "url": "https://www.mc.gov.tl/",
+    "category": "commerce",
+    "title": "MoC Timor-Leste",
+    "keywords": [
+      "trade",
+      "commerce",
+      "export",
+      "import"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mc.gov.tl"
+  },
+  {
+    "name": "World Bank Timor-Leste",
+    "url": "https://data.worldbank.org/country/timor-leste",
+    "category": "statistics",
+    "title": "World Bank Timor-Leste Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/timor-leste"
+  },
+  {
+    "name": "Trading Economics Timor-Leste",
+    "url": "https://tradingeconomics.com/timor-leste",
+    "category": "statistics",
+    "title": "TE Timor-Leste",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/timor-leste"
+  },
+  {
+    "name": "IMF Timor-Leste",
+    "url": "https://www.imf.org/en/Countries/TLS",
+    "category": "statistics",
+    "title": "IMF Timor-Leste",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "CNRT Timor-Leste",
+    "url": "https://www.cnrt.gov.tl/",
+    "category": "commerce",
+    "title": "CNRT Timor-Leste",
+    "keywords": [
+      "resources",
+      "mining",
+      "oil",
+      "gas"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.cnrt.gov.tl"
+  }
+]

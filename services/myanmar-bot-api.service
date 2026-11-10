@@ -1,0 +1,27 @@
+[Unit]
+Description=Myanmar Bot x402 FastAPI
+After=network.target
+
+[Service]
+Type=exec
+User=xrpladmin
+Group=xrplme
+WorkingDirectory=/opt/xrplme/thoughts/api
+Environment="PYTHONUNBUFFERED=1"
+Environment="PYTHONPATH=/opt/xrplme/thoughts/api"
+
+ExecStart=/home/xrpladmin/thailand_bot_venv/bin/python -m uvicorn myanmar_bot_server:app --host 127.0.0.1 --port 8113
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=false
+ProtectSystem=strict
+ReadWritePaths=/opt/xrplme/thoughts/api /home/xrpladmin/thailand_bot_venv
+
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target

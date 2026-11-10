@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Department of Statistics Lao PDR",
+    "url": "https://www.laos-stat.gov.la/",
+    "category": "statistics",
+    "title": "DoS Laos",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.laos-stat.gov.la"
+  },
+  {
+    "name": "Bank of Lao PDR",
+    "url": "https://www.bol.gov.la/",
+    "category": "finance",
+    "title": "BOL Laos",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bol.gov.la"
+  },
+  {
+    "name": "Ministry of Industry and Trade Laos",
+    "url": "https://www.moit.gov.la/",
+    "category": "commerce",
+    "title": "MOIT Laos",
+    "keywords": [
+      "trade",
+      "industry",
+      "export",
+      "import",
+      "investment"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.moit.gov.la"
+  },
+  {
+    "name": "World Bank Laos",
+    "url": "https://data.worldbank.org/country/lao-people-rs",
+    "category": "statistics",
+    "title": "World Bank Laos Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/lao-people-rs"
+  },
+  {
+    "name": "Trading Economics Laos",
+    "url": "https://tradingeconomics.com/laos",
+    "category": "statistics",
+    "title": "TE Laos",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/laos"
+  },
+  {
+    "name": "IMF Laos",
+    "url": "https://www.imf.org/en/Countries/LAO",
+    "category": "statistics",
+    "title": "IMF Laos",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Ministry of Natural Resources and Environment Laos",
+    "url": "https://www.mone.gov.la/",
+    "category": "commerce",
+    "title": "MONRE Laos",
+    "keywords": [
+      "resources",
+      "mining",
+      "energy",
+      "environment"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mone.gov.la"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Department of Statistics Malaysia",
+    "url": "https://www.dosm.gov.my/",
+    "category": "statistics",
+    "title": "DOSM Malaysia",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.dosm.gov.my"
+  },
+  {
+    "name": "Bank Negara Malaysia",
+    "url": "https://www.bnm.gov.my/",
+    "category": "finance",
+    "title": "BNM Statistics",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bnm.gov.my"
+  },
+  {
+    "name": "Ministry of International Trade and Industry",
+    "url": "https://www.miti.gov.my/",
+    "category": "commerce",
+    "title": "MITI Malaysia",
+    "keywords": [
+      "trade",
+      "industry",
+      "export",
+      "import",
+      "investment"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.miti.gov.my"
+  },
+  {
+    "name": "World Bank Malaysia",
+    "url": "https://data.worldbank.org/country/malaysia",
+    "category": "statistics",
+    "title": "World Bank Malaysia Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators",
+      "development"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/malaysia"
+  },
+  {
+    "name": "Trading Economics Malaysia",
+    "url": "https://tradingeconomics.com/malaysia",
+    "category": "statistics",
+    "title": "TE Malaysia",
+    "keywords": [
+      "economic",
+      "indicators",
+      "data",
+      "statistics"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/malaysia"
+  },
+  {
+    "name": "IMF Malaysia",
+    "url": "https://www.imf.org/en/Countries/MYS",
+    "category": "statistics",
+    "title": "IMF Malaysia",
+    "keywords": [
+      "imf",
+      "economic outlook",
+      "policy",
+      "surveillance"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Malaysia External Trade Development Company",
+    "url": "https://www.matrade.gov.my/",
+    "category": "commerce",
+    "title": "MATRADE",
+    "keywords": [
+      "export",
+      "trade",
+      "investment",
+      "market"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.matrade.gov.my"
+  }
+]

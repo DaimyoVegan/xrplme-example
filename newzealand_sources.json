@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Statistics New Zealand",
+    "url": "https://www.stats.govt.nz/",
+    "category": "statistics",
+    "title": "Stats NZ",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.stats.govt.nz"
+  },
+  {
+    "name": "Reserve Bank of New Zealand",
+    "url": "https://www.rbnz.govt.nz/",
+    "category": "finance",
+    "title": "RBNZ",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.rbnz.govt.nz"
+  },
+  {
+    "name": "Ministry of Business New Zealand",
+    "url": "https://www.mbie.govt.nz/",
+    "category": "commerce",
+    "title": "MBIE NZ",
+    "keywords": [
+      "trade",
+      "business",
+      "export",
+      "import",
+      "investment"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mbie.govt.nz"
+  },
+  {
+    "name": "World Bank New Zealand",
+    "url": "https://data.worldbank.org/country/new-zealand",
+    "category": "statistics",
+    "title": "World Bank NZ Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/new-zealand"
+  },
+  {
+    "name": "Trading Economics New Zealand",
+    "url": "https://tradingeconomics.com/new-zealand",
+    "category": "statistics",
+    "title": "TE NZ",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/new-zealand"
+  },
+  {
+    "name": "IMF New Zealand",
+    "url": "https://www.imf.org/en/Countries/NZL",
+    "category": "statistics",
+    "title": "IMF New Zealand",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Ministry for Primary Industries NZ",
+    "url": "https://www.mpi.govt.nz/",
+    "category": "commerce",
+    "title": "MPI NZ",
+    "keywords": [
+      "agriculture",
+      "trade",
+      "export",
+      "food"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mpi.govt.nz"
+  }
+]

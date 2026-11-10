@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Central Bureau of Statistics Indonesia",
+    "url": "https://www.bps.go.id/",
+    "category": "statistics",
+    "title": "BPS Indonesia",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bps.go.id"
+  },
+  {
+    "name": "Bank Indonesia",
+    "url": "https://www.bi.go.id/",
+    "category": "finance",
+    "title": "Bank Indonesia",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bi.go.id"
+  },
+  {
+    "name": "Ministry of Trade Indonesia",
+    "url": "https://www.kemendag.go.id/",
+    "category": "commerce",
+    "title": "Ministry of Trade",
+    "keywords": [
+      "trade",
+      "export",
+      "import",
+      "investment"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.kemendag.go.id"
+  },
+  {
+    "name": "World Bank Indonesia",
+    "url": "https://data.worldbank.org/country/indonesia",
+    "category": "statistics",
+    "title": "World Bank Indonesia Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/indonesia"
+  },
+  {
+    "name": "Trading Economics Indonesia",
+    "url": "https://tradingeconomics.com/indonesia",
+    "category": "statistics",
+    "title": "TE Indonesia",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/indonesia"
+  },
+  {
+    "name": "IMF Indonesia",
+    "url": "https://www.imf.org/en/Countries/IDN",
+    "category": "statistics",
+    "title": "IMF Indonesia",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Ministry of Finance Indonesia",
+    "url": "https://www.kemenkeu.go.id/",
+    "category": "finance",
+    "title": "Ministry of Finance",
+    "keywords": [
+      "fiscal",
+      "budget",
+      "revenue"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.kemenkeu.go.id"
+  }
+]

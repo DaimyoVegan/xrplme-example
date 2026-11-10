@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Department of Economic Affairs Brunei",
+    "url": "https://www.doe.gov.bn/",
+    "category": "statistics",
+    "title": "DOE Brunei",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.doe.gov.bn"
+  },
+  {
+    "name": "Bank Negara Brunei Darussalam",
+    "url": "https://www.bnb.gov.bn/",
+    "category": "finance",
+    "title": "BNB Brunei",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.bnb.gov.bn"
+  },
+  {
+    "name": "Ministry of Finance and Treasury Brunei",
+    "url": "https://www.mofat.gov.bn/",
+    "category": "finance",
+    "title": "MOF Brunei",
+    "keywords": [
+      "fiscal",
+      "budget",
+      "revenue"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mofat.gov.bn"
+  },
+  {
+    "name": "World Bank Brunei",
+    "url": "https://data.worldbank.org/country/brunei-darussalam",
+    "category": "statistics",
+    "title": "World Bank Brunei Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/brunei-darussalam"
+  },
+  {
+    "name": "Trading Economics Brunei",
+    "url": "https://tradingeconomics.com/brunei",
+    "category": "statistics",
+    "title": "TE Brunei",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/brunei"
+  },
+  {
+    "name": "IMF Brunei",
+    "url": "https://www.imf.org/en/Countries/BRN",
+    "category": "statistics",
+    "title": "IMF Brunei",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Authority for Info-Communications Technology Brunei",
+    "url": "https://www.aida.gov.bn/",
+    "category": "commerce",
+    "title": "AIDA Brunei",
+    "keywords": [
+      "ict",
+      "digital",
+      "economy"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.aida.gov.bn"
+  }
+]

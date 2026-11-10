@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Department of Census and Statistics Myanmar",
+    "url": "https://www.dos.gov.mm/",
+    "category": "statistics",
+    "title": "DoCS Myanmar",
+    "keywords": [
+      "statistics",
+      "data",
+      "economic",
+      "gdp",
+      "inflation",
+      "population"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.dos.gov.mm"
+  },
+  {
+    "name": "Central Bank of Myanmar",
+    "url": "https://www.cbm.gov.mm/",
+    "category": "finance",
+    "title": "CBM Myanmar",
+    "keywords": [
+      "banking",
+      "monetary",
+      "interest",
+      "exchange",
+      "financial"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.cbm.gov.mm"
+  },
+  {
+    "name": "Ministry of Commerce Myanmar",
+    "url": "https://www.moc.gov.mm/",
+    "category": "commerce",
+    "title": "MoC Myanmar",
+    "keywords": [
+      "trade",
+      "commerce",
+      "export",
+      "import"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.moc.gov.mm"
+  },
+  {
+    "name": "World Bank Myanmar",
+    "url": "https://data.worldbank.org/country/myanmar",
+    "category": "statistics",
+    "title": "World Bank Myanmar Data",
+    "keywords": [
+      "world bank",
+      "gdp",
+      "indicators"
+    ],
+    "source_type": "international",
+    "source_url": "https://data.worldbank.org/country/myanmar"
+  },
+  {
+    "name": "Trading Economics Myanmar",
+    "url": "https://tradingeconomics.com/myanmar",
+    "category": "statistics",
+    "title": "TE Myanmar",
+    "keywords": [
+      "economic",
+      "indicators"
+    ],
+    "source_type": "commercial",
+    "source_url": "https://tradingeconomics.com/myanmar"
+  },
+  {
+    "name": "IMF Myanmar",
+    "url": "https://www.imf.org/en/Countries/MMR",
+    "category": "statistics",
+    "title": "IMF Myanmar",
+    "keywords": [
+      "imf",
+      "economic outlook"
+    ],
+    "source_type": "international",
+    "source_url": "https://www.imf.org"
+  },
+  {
+    "name": "Ministry of Planning and Finance Myanmar",
+    "url": "https://www.mopf.gov.mm/",
+    "category": "finance",
+    "title": "MOPF Myanmar",
+    "keywords": [
+      "fiscal",
+      "budget",
+      "revenue",
+      "planning"
+    ],
+    "source_type": "government",
+    "source_url": "https://www.mopf.gov.mm"
+  }
+]
