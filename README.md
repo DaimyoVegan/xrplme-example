@@ -3,7 +3,7 @@
 ## Overview
 
 **xrplme.online** is a source-backed platform providing real-time economic and
-policy data for **120 countries** via x402 payment over the XRP Ledger. Each country
+policy data for **130 countries** via x402 payment over the XRP Ledger. Each country
 exposes two endpoints — a Standard API and an AI-Enhanced API — that return
 structured data sourced from government APIs and official publications.
 
@@ -12,7 +12,7 @@ XRP → retry for data). No API keys, no KYC, no subscriptions.
 
 ### Countries (91)
 
-All 120 countries are live on every rail. The current list is at
+All 130 countries are live on every rail. The current list is at
 **https://xrplme.online/countries.html**, and the slugs are enumerated at the
 bottom of this file.
 
@@ -40,7 +40,7 @@ import requests
 import json
 
 BASE = "https://xrplme.online/wc/v1"
-COUNTRY = "thailand"   # any of the 120 countries — see slug list below
+COUNTRY = "thailand"   # any of the 130 countries — see slug list below
 ENDPOINT = "bot"       # or "bot/ai" for AI-enhanced (5 XRP)
 QUERY = "What are Thailand's business registration requirements?"
 
@@ -174,7 +174,8 @@ switzerland, syria, taiwan, thailand, timor-leste, tunisia, turkey, uae,
 uk, ukraine, uruguay, usa, venezuela, vietnam, yemen, mongolia,
 peru, georgia, mauritius, ecuador, costa_rica, panama,
 dominican_republic, belgium, israel,
-armenia, kyrgyzstan, el_salvador, bahamas, bahrain, azerbaijan, uzbekistan, ethiopia, uganda, botswana, fiji, tajikistan, lebanon, mozambique, honduras, bolivia, jordan, tanzania, zambia, namibia
+armenia, kyrgyzstan, el_salvador, bahamas, bahrain, azerbaijan, uzbekistan, ethiopia, uganda, botswana, fiji, tajikistan, lebanon, mozambique, honduras, bolivia, jordan, tanzania, zambia, namibia,
+pakistan, qatar, oman, kuwait, angola, cote_divoire, cameroon, zimbabwe, jamaica, trinidad_and_tobago
 
 ## License
 
