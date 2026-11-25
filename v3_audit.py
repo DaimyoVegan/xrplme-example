@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 READ-ONLY V3/V4 Audit Script
-Audits all 30 country bots: health, raw 402, AI 402, JSON structure, payment details.
+Audits all 130 country bots: health, raw 402, AI 402, JSON structure, payment details.
 """
 import requests
 import json
